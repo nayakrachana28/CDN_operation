@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "MirsterDemo",
+      "email": "md@gmail.com",
+      "mobile": "12345678910",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "name": "MissGold",
+      "email": "missgold@gmail.com",
+      "mobile": "12345678910",
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "name": "MissSarah",
+      "email": "missa@gmail.com",
+      "mobile": "12345678910",
+      "status": "inactive"
+    },
+    {
+      "id": 4,
+      "name": "rachana",
+      "email": "rachana@gmail.com",
+      "mobile": "8797687986",
+      "status": "active"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
