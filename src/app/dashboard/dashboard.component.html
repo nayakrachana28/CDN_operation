@@ -218,29 +218,48 @@
             </div>
             <div class="modal-body">
               <form [formGroup]="formValue">
-                <div class="mb-3">
+                <div class="form-group mb-3">
                   <label class="form-label">Name</label>
-                  <input type="name" class="form-control" formControlName="name">
+                  <input type="name" class="form-control" formControlName="name"
+				  [ngClass]="{'is-invalid':submitted && f['name'].errors}">
+				  <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+					<div *ngIf="f['name'].errors['required']">Product Name is required</div>
+					<div *ngIf="f['name'].errors['minlength']">Minimum Length is 16</div>
+				  </div>
                 </div>
-                <div class="mb-3">
+                <div class="form-group mb-3">
                   <label class="form-label">Email</label>
-                  <input type="email" class="form-control" formControlName="email">
+                  <input type="email" class="form-control" formControlName="email"
+				  [ngClass]="{'is-invalid':submitted && f['email'].errors}">
+				  <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+					<div *ngIf="f['email'].errors['required']">Email ID is required</div>
+				  </div>
                 </div>
-                <div class="mb-3">
+                <div class="form-group mb-3">
                   <label class="form-label">Mobile</label>
-                  <input type="mobile" class="form-control" formControlName="mobile">
+                  <input type="mobile" class="form-control" formControlName="mobile"
+				  [ngClass]="{'is-invalid':submitted && f['mobile'].errors}">
+				  <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">
+					<div *ngIf="f['mobile'].errors['required']">Mobile Number is required</div>
+				  </div>
                 </div>
-                <div class="mb-3">
+                <div class="form-group mb-3">
                   <label class="form-label">Status</label>
-                  <input type="status" class="form-control" formControlName="status">
+                  <input type="status" class="form-control" formControlName="status"
+				  [ngClass]="{'is-invalid':submitted && f['status'].errors}">
+				  <div *ngIf="submitted && f['status'].errors" class="invalid-feedback">
+					<div *ngIf="f['status'].errors['required']">Mention the Stauts</div>
+				  </div>
                 </div>
+
+				<div class="modal-footer">
+					<button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" *ngIf="showAdd" (click)="postproductDetails()" class="btn btn-primary">Add</button>
+					<button type="button" *ngIf="showUpdate" (click)="updateproductdetails()" class="btn btn-warning">Update</button>
+				  </div>
               </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" *ngIf="showAdd" (click)="postproductDetails()" class="btn btn-primary">Add</button>
-              <button type="button" *ngIf="showUpdate" (click)="updateproductdetails()" class="btn btn-warning">Update</button>
-            </div>
+           
           </div>
         </div>
       </div>
